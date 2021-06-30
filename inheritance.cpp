@@ -4,7 +4,6 @@
 
 using namespace std;
 
-
 class Animal {
 public:
     Animal (const string& type): type_(type) {
@@ -44,7 +43,15 @@ public:
 private:
     const string name_;
 };
+class Horse : public Animal {
+public:
+    Horse () : Animal("horse") {
+    }
+    void Voice() const override {
+        cout << type_ << " is silent!" << endl;
+    }
 
+};
 void MakeSound (const Animal& a){
     a.Voice();
 }
